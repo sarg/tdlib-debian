@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
+VERSION = 1.5.0
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = v$(VERSION).tar.gz
+URL = https://github.com/tdlib/td/archive/$(TARBALL)
+
+%:
+	dh $@
+
+override_dh_update_autotools_config:
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)
+
+override_dh_clean:
+	find . -mindepth 1 -maxdepth 1 -not -name debian -not -name .git -print0 | xargs --null rm -fR
+	dh_clean

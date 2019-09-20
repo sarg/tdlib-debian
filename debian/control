@@ -1,0 +1,17 @@
+Source: tdlib
+Maintainer: Sergey Trofimov <sarg@sarg.org.ru>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), zlib1g-dev, libssl-dev, gperf, cmake, clang, libc++-dev, libc++abi-dev, wget
+
+Package: tdlib
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: telegram tdlib
+
+Package: tdlib-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, tdlib (= ${binary:Version})
+Description: telegram tdlib development
