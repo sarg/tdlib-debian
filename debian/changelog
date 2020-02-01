@@ -1,5 +1,6 @@
-tdlib (1.5.0-1) UNRELEASED; urgency=medium
+tdlib (1.6.0-1) UNRELEASED; urgency=medium
 
-  * Initial release. (Closes: #XXXXXX)
+  [ Sergey Trofimov ]
+  * Upstream release 1.6.0
 
- -- Sergey Trofimov <sarg@sarg.org.ru>  Fri, 13 Sep 2019 11:19:57 +0200
+ -- sarg <sarg@thinkpad>  Sat, 01 Feb 2020 10:38:48 +0100
